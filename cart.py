@@ -6,7 +6,7 @@ class Cart:
         self.items.append({"name": name, "price": price, "qty": qty})
 
     def total(self):
-        return sum(item["price"] for item in self.items)
+        return sum(item["price"] * item["qty"] for item in self.items)
 
     def apply_discount(self, percent):
         discount = self.total() * (percent / 100)
